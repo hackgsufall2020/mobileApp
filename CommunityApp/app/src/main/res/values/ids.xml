@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="editTextTextMultiLine" type="id" />
+    <item name="textView" type="id" />
+    <item name="imageButton2" type="id" />
+    <item name="editTextTextMultiLine2" type="id" />
+    <item name="editTextTextPostalAddress" type="id" />
+    <item name="imageButton3" type="id" />
+</resources>
