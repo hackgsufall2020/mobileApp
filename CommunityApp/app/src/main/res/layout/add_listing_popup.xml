@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="397dp"
+        android:layout_width="match_parent"
         android:layout_height="609dp"
         android:background="@drawable/boarder"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -39,7 +39,7 @@
 
     <EditText
         android:id="@+id/editTextTextMultiLine"
-        android:layout_width="349dp"
+        android:layout_width="match_parent"
         android:layout_height="74dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/boarder"
@@ -67,12 +67,12 @@
 
     <EditText
         android:id="@+id/editTextTextMultiLine2"
-        android:layout_width="336dp"
+        android:layout_width="match_parent"
         android:layout_height="220dp"
         android:background="@drawable/boarder"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
+
+
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -101,7 +101,7 @@
 
     <EditText
         android:id="@+id/editTextTextPostalAddress"
-        android:layout_width="347dp"
+        android:layout_width="match_parent"
         android:layout_height="61dp"
         android:background="@drawable/boarder"
         android:ems="10"
