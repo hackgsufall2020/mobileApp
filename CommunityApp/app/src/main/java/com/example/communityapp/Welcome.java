@@ -14,7 +14,7 @@ public class Welcome extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome);
+        setContentView(R.layout.activity_main);
 
         // Create a button that navigate the user to the next page
         button1 = findViewById(R.id.SignUp);
@@ -25,6 +25,13 @@ public class Welcome extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 startActivity(new Intent(Welcome.this, SignUp.class));
+            }
+        });
+        //Listener for the button2
+        button2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                startActivity(new Intent(Welcome.this, Signin.class));
             }
         });
 

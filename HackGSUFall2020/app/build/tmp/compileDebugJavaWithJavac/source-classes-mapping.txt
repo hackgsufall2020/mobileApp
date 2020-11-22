@@ -1,0 +1,7 @@
+com/example/hachgsufall2020/MainActivity.java
+ com.example.hachgsufall2020.MainActivity
+com/example/hachgsufall2020/BuildConfig.java
+ com.example.hachgsufall2020.BuildConfig
+com/example/hachgsufall2020/MapsActivity.java
+ com.example.hachgsufall2020.MapsActivity
+ com.example.hachgsufall2020.MapsActivity$1

@@ -99,6 +99,8 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
 
                 //display the popup window
                 popupWindow.showAtLocation(mapView, Gravity.CENTER, 0, 0);
+                popupWindow.setFocusable(true);
+                popupWindow.update();
 
                 //close the popup window on button click
                 closePopupBtn.setOnClickListener(new View.OnClickListener() {
