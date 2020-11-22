@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.PopupWindow;
 
@@ -52,10 +53,13 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
 
     private PopupWindow popupWindow;
     private View mapView;
+    private EditText Title;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
         if (savedInstanceState != null) {
             lastKnownLocation = savedInstanceState.getParcelable(KEY_LOCATION);
@@ -87,6 +91,7 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
             public void onMapClick(final LatLng point) {
@@ -94,6 +99,7 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
                 View customView = layoutInflater.inflate(R.layout.add_listing_popup,null);
 
                 ImageButton closePopupBtn = (ImageButton) customView.findViewById(R.id.imageButton2);
+                ImageButton submitPopupBtn = (ImageButton) customView.findViewById(R.id.imageButton3);
 
                 popupWindow = new PopupWindow(customView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 
@@ -101,13 +107,23 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
                 popupWindow.showAtLocation(mapView, Gravity.CENTER, 0, 0);
                 popupWindow.setFocusable(true);
                 popupWindow.update();
+                Title = customView.findViewById(R.id.editTextTextMultiLine);
 
                 //close the popup window on button click
                 closePopupBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         popupWindow.dismiss();
-                        MarkerOptions marker = new MarkerOptions().position(new LatLng(point.latitude, point.longitude)).title("New Marker");
+                    }
+                });
+                //close the popup window on button click
+                submitPopupBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String message = Title.getText().toString();
+
+                        popupWindow.dismiss();
+                        MarkerOptions marker = new MarkerOptions().position(new LatLng(point.latitude, point.longitude)).title(message);
                         mMap.addMarker(marker);
                         System.out.println(point.latitude+"---"+ point.longitude);
                     }
